@@ -1,0 +1,15 @@
+html,
+body {
+  min-height: 100%;
+  font-size: 16px;
+  background-color: $red;
+}
+
+.global-header {
+  background-color: yellow;
+  font-size: 100px;
+}
+
+.bg-red {
+  background-color: $red;
+}

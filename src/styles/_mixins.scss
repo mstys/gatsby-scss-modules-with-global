@@ -1,0 +1,20 @@
+$media-tablet: 981px;
+$media-desktop: 1200px;
+
+@mixin mediaMobile() {
+  @media (max-width: #{$media-tablet - 1}) {
+    @content
+  }
+};
+
+@mixin mediaTablet() {
+  @media (min-width: #{$media-tablet}) and (max-width: #{$media-desktop - 1}) {
+    @content
+  }
+};
+
+@mixin mediaDesktop() {
+  @media (min-width: #{$media-desktop}) {
+    @content
+  }
+};

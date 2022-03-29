@@ -1,0 +1,1 @@
+import "./src/styles/main.global.scss"
