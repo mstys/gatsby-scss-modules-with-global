@@ -9,7 +9,6 @@ const IndexRoute = ({ path }: PageProps) => {
   return (
     <Layout>
       <main>
-        <Header />
         <Card />
       </main>
     </Layout>
