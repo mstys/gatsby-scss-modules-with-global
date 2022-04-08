@@ -37,35 +37,35 @@ module.exports = {
       require.resolve("babel-plugin-remove-graphql-queries")
     );
 
-    // config.module.rules.push({
-    //   test: /\.s(a|c)ss$/,
-    //   include: path.resolve(__dirname, "../"),
-    //   use: [
-    //     // Add exports of a module as style to DOM
-    //     "style-loader",
-    //     // Loads CSS file with resolved imports and returns CSS code
-    //     {
-    //       loader: "css-loader",
-    //       options: {
-    //         modules: {
-    //           auto: true,
-    //           localIdentName: "[name]__[local]--[hash:base64:5]",
-    //           namedExport: true,
-    //         },
-    //       },
-    //     },
-    //     // Loads and compiles a SASS/SCSS file
-    //     {
-    //       loader: "sass-loader",
-    //       options: {
-    //         sourceMap: true,
-    //         implementation: require("sass"), // Prefer `dart-sass`
-    //         additionalData: `@import 'src/styles/_variables.scss';
-    //           @import 'src/styles/_mixins.scss';`,
-    //       },
-    //     },
-    //   ],
-    // });
+    config.module.rules.push({
+      test: /\.s(a|c)ss$/,
+      include: path.resolve(__dirname, "../"),
+      use: [
+        // Add exports of a module as style to DOM
+        "style-loader",
+        // Loads CSS file with resolved imports and returns CSS code
+        {
+          loader: "css-loader",
+          options: {
+            modules: {
+              auto: true,
+              localIdentName: "[name]__[local]--[hash:base64:5]",
+              namedExport: true,
+            },
+          },
+        },
+        // Loads and compiles a SASS/SCSS file
+        {
+          loader: "sass-loader",
+          options: {
+            sourceMap: true,
+            implementation: require("sass"), // Prefer `dart-sass`
+            additionalData: `@import 'src/styles/_variables.scss';
+              @import 'src/styles/_mixins.scss';`,
+          },
+        },
+      ],
+    });
 
     return config;
   },
